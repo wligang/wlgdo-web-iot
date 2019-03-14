@@ -14,10 +14,9 @@ import io.netty.util.CharsetUtil;
 /***
  *
  * @ClassName: WebIoTNettyServer
- * @Description: TODO  netty 提供服务
- * @author xiefg
- * @date 2016年8月4日 下午5:02:05
- *
+ * @Description: netty service
+ * @author Ligang.Wang[wlgchun@163.com]
+ * @date 2019年3月14日
  */
 public class WebIoTNettyServer {
     //ip 地址
