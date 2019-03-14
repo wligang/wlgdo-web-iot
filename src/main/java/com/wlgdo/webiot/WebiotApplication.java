@@ -1,11 +1,14 @@
 package com.wlgdo.webiot;
 
-import com.wlgdo.webiot.netty.NettyServer;
+import com.wlgdo.webiot.netty.WebIoTNettyServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * @author Ligang.Wang[wlgchun@163.com]
+ */
 @SpringBootApplication
 public class WebiotApplication {
 
@@ -14,14 +17,11 @@ public class WebiotApplication {
     }
 
     @PostConstruct
-    public void init() {
-        System.out.println("wlgdo web netty is initting...");
-        try {
-            NettyServer.init();
-        } catch (Exception e) {
-            System.out.println("netty server init exception");
-            e.printStackTrace();
-        }
+    public void init() throws Exception {
+        System.out.println("wlgdo web netty service is initting...");
+
+        WebIoTNettyServer.init();
+
         System.out.println("wlgdo web netty server init successful !!!");
     }
 

@@ -13,13 +13,13 @@ import io.netty.util.CharsetUtil;
 
 /***
  *
- * @ClassName: NettyServer
+ * @ClassName: WebIoTNettyServer
  * @Description: TODO  netty 提供服务
  * @author xiefg
  * @date 2016年8月4日 下午5:02:05
  *
  */
-public class NettyServer {
+public class WebIoTNettyServer {
     //ip 地址
     private static String IP = "127.0.0.1";
     //默认端口
@@ -47,7 +47,7 @@ public class NettyServer {
                 pipeline.addLast(new LengthFieldPrepender(4));
                 pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
                 pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-                pipeline.addLast(new ServerHandler());
+                pipeline.addLast(new WebIoTServerHandler());
             }
 
         });
@@ -79,7 +79,7 @@ public class NettyServer {
     public static void main(String[] args) throws Exception {
         System.out.println("初始化配置文件...");
         System.out.println("开始启动TCP服务器...");
-        NettyServer.init();
+        WebIoTNettyServer.init();
 //         HelloServer.shutdown();
     }
 }
