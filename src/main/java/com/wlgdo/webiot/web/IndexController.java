@@ -32,8 +32,12 @@ public class IndexController {
 
     @RequestMapping(value = "send/{id}/{msg}", method = RequestMethod.GET)
     public Object send(@PathVariable String msg, @PathVariable Integer id) {
-        Channel channle = NettyGlobalProp.getInstance().getBiMap().get(id);
-        channle.writeAndFlush(msg);
-        return "successful";
+        if (NettyGlobalProp.getInstance().getBiMap().containsKey(id)) {
+            Channel channle = NettyGlobalProp.getInstance().getBiMap().get(id);
+            channle.writeAndFlush(msg);
+            return "successful";
+        }
+        return "failure";
+
     }
 }

@@ -27,13 +27,21 @@ public class WebIoTServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         // TODO Auto-generated method stub
-        System.out.println("【channelActive】。。。");
+
         InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
         NettyGlobalProp.getInstance().biMap.put(address.getPort(), ctx.channel());
+        System.out.println("【channelActive】"+address.getPort());
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("【exception is general】");
+        InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
+        NettyGlobalProp.getInstance().biMap.remove(address.getPort());
+    }
+
+    @Override
+    public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("【channelActive is remove】");
     }
 }
