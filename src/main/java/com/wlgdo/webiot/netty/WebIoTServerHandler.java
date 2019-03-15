@@ -1,5 +1,6 @@
 package com.wlgdo.webiot.netty;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -15,8 +16,8 @@ public class WebIoTServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-
         System.out.println("server receive message :" + msg);
+        System.out.println("server receive message type:" + msg.getClass().getTypeName());
 
         InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
         System.out.println("【客户端的信息】。。。" + address);
@@ -30,12 +31,12 @@ public class WebIoTServerHandler extends ChannelInboundHandlerAdapter {
 
         InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
         NettyGlobalProp.getInstance().biMap.put(address.getPort(), ctx.channel());
-        System.out.println("【channelActive】"+address.getPort());
+        System.out.println("【channelActive】" + address.getPort());
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        System.out.println("【exception is general】");
+        System.out.println("【exception is general】"+cause.getMessage());
         InetSocketAddress address = (InetSocketAddress) ctx.channel().remoteAddress();
         NettyGlobalProp.getInstance().biMap.remove(address.getPort());
     }

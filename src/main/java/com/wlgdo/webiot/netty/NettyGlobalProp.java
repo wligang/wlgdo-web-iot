@@ -9,7 +9,7 @@ import io.netty.channel.Channel;
  * @date : 2019/3/14
  */
 
-public class NettyGlobalProp {
+public  class NettyGlobalProp {
 
     private static volatile NettyGlobalProp instance = null;
 
