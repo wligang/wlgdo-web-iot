@@ -58,7 +58,7 @@ public class NettyClient implements Runnable {
         int time = 0;
         for (; ; ) {
             new Thread(new NettyClient(), "【this thread】" + time++ + " ").start();
-            Thread.sleep(100);
+            Thread.sleep(200);
         }
     }
 

@@ -20,7 +20,7 @@ import io.netty.util.CharsetUtil;
  */
 public class WebIoTNettyServer {
     //ip 地址
-    private static String IP = "127.0.0.1";
+    private static String IP = "0.0.0.0";
     //默认端口
     private static int PORT = 8000;
 
