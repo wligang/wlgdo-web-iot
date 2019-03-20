@@ -1,6 +1,6 @@
-package com.wlgdo.webiot.netty;
+package com.wlgdo.webiot.netty.netyserver;
 
-import io.netty.buffer.ByteBuf;
+import com.wlgdo.webiot.netty.NettyGlobalProp;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 

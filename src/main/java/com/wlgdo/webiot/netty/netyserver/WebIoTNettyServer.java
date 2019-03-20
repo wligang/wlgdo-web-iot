@@ -1,4 +1,4 @@
-package com.wlgdo.webiot.netty;
+package com.wlgdo.webiot.netty.netyserver;
 
 
 import io.netty.bootstrap.ServerBootstrap;
@@ -22,7 +22,7 @@ public class WebIoTNettyServer {
     //ip 地址
     private static String IP = "127.0.0.1";
     //默认端口
-    private static int PORT = 8000;
+    private static int PORT = 9000;
 
     private static final int BIZGROUPSIZE = Runtime.getRuntime().availableProcessors() * 2;
 
@@ -31,7 +31,6 @@ public class WebIoTNettyServer {
     private static final EventLoopGroup workerGroup = new NioEventLoopGroup(BIZTHREADSIZE);
 
     public static void init() throws Exception {
-
 
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(bossGroup, workerGroup);
@@ -63,11 +62,10 @@ public class WebIoTNettyServer {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
             }
         };
         thread.start();
-        System.out.println("TCP服务器已启动");
+
     }
 
 
