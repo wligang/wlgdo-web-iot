@@ -39,7 +39,7 @@ public class NettyClient implements Runnable {
                 }
             });
 
-            ChannelFuture f = b.connect("127.0.0.1", 8000).sync();
+            ChannelFuture f = b.connect("119.3.237.172", 8000).sync();
             f.channel().writeAndFlush("Netty Hello Service!" + Thread.currentThread().getName() + ":--->:" + Thread.currentThread().getId());
             f.channel().closeFuture().sync();
             InetSocketAddress socketAddress = (InetSocketAddress) f.channel().localAddress();
@@ -59,6 +59,8 @@ public class NettyClient implements Runnable {
         for (; ; ) {
             new Thread(new NettyClient(), "【this thread】" + time++ + " ").start();
             Thread.sleep(100);
+            if (time>1000)
+                break;
         }
     }
 
