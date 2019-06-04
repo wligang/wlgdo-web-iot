@@ -5,21 +5,21 @@
     <title>websocket</title>
 </head>
 <body>
-
+<script type="text/javascript" src="/index.js"></script>
 <script type="text/javascript">
     var socket;
-    if(window.WebSocket) {
+    if (window.WebSocket) {
         socket = new WebSocket("ws://localhost:8001/hello");
         socket.onmessage = function (event) {
             var ta = document.getElementById("resp");
             ta.value = ta.value + "\n" + event.data;
         }
-        
+
         socket.onopen = function (event) {
             var ta = document.getElementById("resp");
             ta.value = "连接接开启！";
         }
-        
+
         socket.onclose = function (event) {
             var ta = document.getElementById("resp");
             ta.value = ta.value + "\n" + "连接关闭！";
@@ -29,11 +29,11 @@
     }
 
     function send(msg) {
-        if(!window.WebSocket) {
+        if (!window.WebSocket) {
             return;
         }
 
-        if(socket.readyState == WebSocket.OPEN) {
+        if (socket.readyState == WebSocket.OPEN) {
             socket.send(msg);
         } else {
             alert("连接未开启！")
