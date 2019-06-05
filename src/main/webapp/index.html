@@ -10,7 +10,7 @@
 <script type="text/javascript">
     var socket;
     if (window.WebSocket) {
-        socket = new WebSocket("ws://localhost:8001/hello");
+        socket = new WebSocket("ws://localhost:8001/webiot");
         socket.onmessage = function (event) {
             var ta = document.getElementById("resp");
             ta.value = ta.value + "\n" + event.data;
