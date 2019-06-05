@@ -6,6 +6,8 @@ import com.wlgdo.webiot.netty.netyserver.WebIoTNettyServer;
 import com.wlgdo.webiot.netty.websocket.WebSocketServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationStartedEvent;
+import org.springframework.context.ApplicationListener;
 
 
 import javax.annotation.PostConstruct;
@@ -16,10 +18,9 @@ import javax.annotation.PostConstruct;
  */
 @SpringBootApplication
 public class WebiotApplication {
-
     public static void main(String[] args) {
-
         SpringApplication application = new SpringApplication(WebiotApplication.class);
+
         application.addListeners(new IoTApplicatonStartEventListener());
         application.addListeners(new IoTApplicatonCloseEventListener());
         application.run(args);
@@ -29,7 +30,7 @@ public class WebiotApplication {
     @PostConstruct
     public void init() throws Exception {
         System.out.println("wlgdo web netty service is initting...");
-//        WebIoTNettyServer.init();
+        //WebIoTNettyServer.init();
         WebSocketServer.init();
         System.out.println("wlgdo web netty server init successful !!!");
     }
