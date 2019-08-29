@@ -1,4 +1,4 @@
-package com.wlgdo.webiot.netty.netyserver;
+package com.wlgdo.webiot.netty.nettyserver;
 
 import com.wlgdo.webiot.netty.NettyGlobalProp;
 import io.netty.channel.ChannelHandlerContext;

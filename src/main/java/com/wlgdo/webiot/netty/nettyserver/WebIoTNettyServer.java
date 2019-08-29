@@ -1,4 +1,4 @@
-package com.wlgdo.webiot.netty.netyserver;
+package com.wlgdo.webiot.netty.nettyserver;
 
 
 import io.netty.bootstrap.ServerBootstrap;
