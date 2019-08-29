@@ -1,4 +1,4 @@
-package com.wlgdo.webiot.core;
+package com.wlgdo.webiot.listenner;
 
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.ApplicationListener;
