@@ -1,7 +1,7 @@
 package com.wlgdo.webiot.exceptions;
 
 /**
- * @author : Ligang.Wang[wangligang@karaku.cn]
+ * @author : Ligang.Wang[wlgchun@163.com]
  * @date : 2019/3/19
  */
 
