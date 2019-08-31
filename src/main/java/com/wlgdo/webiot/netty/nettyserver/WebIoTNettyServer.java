@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Value;
 public class WebIoTNettyServer {
     //ip 地址
     @Value("netty.server.ip")
-    private static final String IP = null;
+    private static final String IP = "0.0.0.0";
     //默认端口
     @Value("netty.server.prot")
     private static final int PORT = 0;
