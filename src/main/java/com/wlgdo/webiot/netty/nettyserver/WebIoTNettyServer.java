@@ -75,10 +75,4 @@ public class WebIoTNettyServer {
         bossGroup.shutdownGracefully();
     }
 
-    public static void main(String[] args) throws Exception {
-        System.out.println("初始化配置文件...");
-        System.out.println("开始启动TCP服务器...");
-        WebIoTNettyServer.init();
-//         HelloServer.shutdown();
-    }
 }
