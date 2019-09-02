@@ -1,1 +1,1 @@
-alert('ok')
+console.log("welcome to wlgdo.com socket server")

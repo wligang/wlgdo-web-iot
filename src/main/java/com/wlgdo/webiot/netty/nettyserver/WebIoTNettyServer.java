@@ -1,5 +1,6 @@
 package com.wlgdo.webiot.netty.nettyserver;
 
+import com.wlgdo.webiot.netty.NettyGlobalProp;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -17,12 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @date 2019年3月14日
  */
 public class WebIoTNettyServer {
-    //ip 地址
-    @Value("netty.server.ip")
-    private static final String IP = "0.0.0.0";
-    //默认端口
-    @Value("netty.server.prot")
-    private static final int PORT = 0;
+
 
     private static final int BIZGROUPSIZE = Runtime.getRuntime().availableProcessors() * 2;
 
@@ -31,6 +27,7 @@ public class WebIoTNettyServer {
     private static final EventLoopGroup workerGroup = new NioEventLoopGroup(BIZTHREADSIZE);
 
     public static void init() throws Exception {
+
 
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(bossGroup, workerGroup);
@@ -50,15 +47,16 @@ public class WebIoTNettyServer {
             }
 
         });
-        System.out.println("【TCP服务器IP】" + IP + "【TCP服务器PORT】" + PORT);
+
 
         //此处启动netty服务
         Thread thread = new Thread() {
             @Override
             public void run() {
+                System.out.println("【TCP服务器IP】" + NettyGlobalProp.SERVER_ADDRESS + "【TCP服务器PORT】" + NettyGlobalProp.SERVER_PORT);
                 ChannelFuture f = null;
                 try {
-                    f = bootstrap.bind(IP, PORT).sync();
+                    f = bootstrap.bind(NettyGlobalProp.SERVER_ADDRESS, NettyGlobalProp.SERVER_PORT).sync();
                     f.channel().closeFuture().sync();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

@@ -2,6 +2,8 @@ package com.wlgdo.webiot;
 
 import com.wlgdo.webiot.listenner.IoTApplicatonCloseEventListener;
 import com.wlgdo.webiot.listenner.IoTApplicatonStartEventListener;
+import com.wlgdo.webiot.netty.nettyserver.WebIoTNettyServer;
+import com.wlgdo.webiot.netty.websocket.WebSocketServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -25,10 +27,8 @@ public class WebiotApplication {
 
     @PostConstruct
     public void init() throws Exception {
-        System.out.println("wlgdo web netty service is initting...");
-        //WebIoTNettyServer.init();
-        //WebSocketServer.init();
-        System.out.println("wlgdo web netty server init successful !!!");
+        WebIoTNettyServer.init();
+        WebSocketServer.init();
     }
 
 }
