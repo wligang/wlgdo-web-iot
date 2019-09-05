@@ -26,10 +26,6 @@ import java.util.Date;
 @AllArgsConstructor
 public class IndexController {
 
-
-    @Autowired
-    IndexService indexService;
-
     /**
      * 统计有多少个连接
      *
