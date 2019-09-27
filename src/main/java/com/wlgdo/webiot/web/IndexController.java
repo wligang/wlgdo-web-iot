@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author : Ligang.Wang[wangligang@karaku.cn]
+ * @author : Ligang.Wang[Feify@wlgdo.cn]
  * @date : 2019/3/14
  */
 @Slf4j

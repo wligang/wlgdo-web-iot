@@ -4,7 +4,7 @@ import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.ApplicationListener;
 
 /**
- * @author : Ligang.Wang[wangligang@karaku.cn]
+ * @author : Ligang.Wang[Feify@wlgdo.cn]
  * @date : 2019/3/21
  */
 public class IoTApplicatonStartEventListener implements ApplicationListener<ApplicationStartedEvent> {

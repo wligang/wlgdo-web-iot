@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
- * @author : Ligang.Wang[wangligang@163.com]
+ * @author : Ligang.Wang[Feify@wlgdo.com]
  * @date : 2019/3/14
  */
 public class NettyGlobalProp {

@@ -14,7 +14,7 @@ import io.netty.util.CharsetUtil;
 import java.net.InetSocketAddress;
 
 /**
- * @author : Ligang.Wang[wangligang@karaku.cn]
+ * @author : Ligang.Wang[wangligang@wlgdo.cn]
  * @date
  */
 public class NettyClient implements Runnable {
@@ -59,7 +59,7 @@ public class NettyClient implements Runnable {
         for (; ; ) {
             new Thread(new NettyClient(), "【this thread】" + time++ + " ").start();
             Thread.sleep(100);
-            if (time>1000)
+            if (time > 1000)
                 break;
         }
     }

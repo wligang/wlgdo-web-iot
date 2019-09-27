@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 
 
 /**
- * @author Ligang.Wang[wlgchun@163.com]
+ * @author Ligang.Wang[Feify@wlgdo.com]
  */
 @SpringBootApplication
 public class WebiotApplication {

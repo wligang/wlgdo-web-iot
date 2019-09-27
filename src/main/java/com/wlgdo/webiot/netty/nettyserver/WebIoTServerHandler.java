@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 /**
  * 消息处理器
  *
- * @author : Ligang.Wang[wlgchun@163.com]
+ * @author : Ligang.Wang[Feify@wlgdo.com]
  * @date : 2019/3/11
  */
 public class WebIoTServerHandler extends ChannelInboundHandlerAdapter {

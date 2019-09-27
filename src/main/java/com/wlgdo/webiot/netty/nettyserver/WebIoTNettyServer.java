@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 /***
  * @Description: netty service
- * @author Ligang.Wang[wlgchun@163.com]
+ * @author Ligang.Wang[Feify@wlgdo.com]
  * @date 2019年3月14日
  */
 public class WebIoTNettyServer {

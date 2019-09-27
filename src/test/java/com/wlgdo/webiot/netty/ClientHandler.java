@@ -6,7 +6,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import java.net.InetSocketAddress;
 
 /**
- * @author : Ligang.Wang[wangligang@karaku.cn]
+ * @author : Ligang.Wang[Feify@wlgdo.cn]
  * @date : 2019/3/11
  */
 
